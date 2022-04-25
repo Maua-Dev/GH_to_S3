@@ -4,7 +4,7 @@ import shutil
 def build():
 
     #create venv
-    os.system("python3 -m venv venv")
+    os.system("python -m venv venv")
 
     #activate venv
     os.system("source venv/bin/activate")
