@@ -1,0 +1,29 @@
+name: Lambda Function CI
+
+on:
+  push:
+  pull_request:
+
+  workflow_dispatch:
+
+
+jobs:
+
+  build:
+
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set up Python 3.8
+      uses: actions/setup-python@v2
+      with:
+        python-version: 3.8
+    
+    steps:
+    - name: run build.py
+    - run: python -c "from build import build; print(build())"
+    
+    
