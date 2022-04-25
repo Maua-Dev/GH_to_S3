@@ -9,7 +9,6 @@ on:
 jobs:
 
   build:
-
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
@@ -17,9 +16,8 @@ jobs:
       uses: actions/setup-python@v2
       with:
         python-version: 3.8
-    
-    steps:
+        
     - name: run build.py
-    - run: python -c "from build import build; print(build())"
+      run: python -c "from build import build; print(build())"
     
     
