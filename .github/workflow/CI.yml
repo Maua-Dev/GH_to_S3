@@ -1,7 +1,7 @@
 name: Lambda Function CI
 
 on:
-  push: [main]
+  push:
   
   workflow_dispatch:
 
