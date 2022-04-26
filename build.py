@@ -19,6 +19,6 @@ def build():
 #     os.system("")
 
     #zip venv\lib\site-packages to upload\function.zip
-    shutil.make_archive("upload/function", "zip", "venv/lib/site-packages") 
+    shutil.make_archive("upload/function", "zip", "venv/lib/Python3.6/site-packages") 
 
     return "upload"
