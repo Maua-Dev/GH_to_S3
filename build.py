@@ -3,20 +3,17 @@ import shutil
 
 def build():
 
-    #create venv
-    os.system("python -m venv venv; source venv/bin/activate; pip install -r lambda_function/requirements.txt; mkdir upload ; cp lambda_function\gh_to_s3.py venv\lib\python3.8\site-packages")
+    create_venv= "python -m venv venv;"
 
-#     #activate venv
-#     os.system("")
+    activate_venv= "source venv/bin/activate;"
 
-#     #install requirements
-#     os.system("")
+    install_requirements= "pip install -r requirements.txt;"
 
-#     #create dir upload
-#     os.system("")
+    create_dir_upload = "mkdir upload;"
 
-#     #copy gh_to_s3 to venv\lib\site-packages
-#     os.system("")
+    copy_to_site_packages = "cp lambda_function\gh_to_s3.py venv\lib\python3.8\site-packages;"
+    
+    os.system(f"{create_venv} {activate_venv} {install_requirements} {create_dir_upload} {copy_to_site_packages}")
 
     #zip venv\lib\site-packages to upload\function.zip
     shutil.make_archive("upload/function", "zip", "venv/lib/python3.8/site-packages") 
