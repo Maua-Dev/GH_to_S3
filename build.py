@@ -13,7 +13,7 @@ def build():
 
     copy_to_site_packages = "cp lambda_function/gh_to_s3.py venv/lib/python3.8/site-packages;"
 
-    os.system(f"{create_venv} {activate_venv} {install_requirements} {create_dir_upload} {copy_to_site_packages} ls -a;")
+    os.system(f"{create_venv} {activate_venv} {install_requirements} {create_dir_upload} {copy_to_site_packages} ls -R;")
 
     #zip venv\lib\site-packages to upload\function.zip
     shutil.make_archive("upload/function", "zip", "venv/lib/python3.8/site-packages") 
