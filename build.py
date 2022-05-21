@@ -13,11 +13,11 @@ def build():
 
     create_dir_upload = f"mkdir {repo_name};"
 
-    copy_to_site_packages = "cp lambda_function/gh_to_s3.py venv/lib/python3.8/site-packages;"
+    copy_to_site_packages = "cp lambda_function/gh_to_s3.py venv/lib/python3.7/site-packages;"
 
     os.system(f"{create_venv} {activate_venv} {install_requirements} {create_dir_upload} {copy_to_site_packages}")
 
     #zip venv\lib\site-packages to upload\function.zip
-    shutil.make_archive("upload/function", "zip", "venv/lib/python3.8/site-packages") 
+    shutil.make_archive("upload/function", "zip", "venv/lib/python3.7/site-packages") 
 
     return repo_name
