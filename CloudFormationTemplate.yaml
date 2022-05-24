@@ -1,0 +1,33 @@
+AWSTemplateFormatVersion: 2010-09-09
+Description: CloudFormation template to create s3 bucket and deploy a lambda function
+
+Parameters:
+  LambdaArn:
+    Type: String
+    Description: Lambda function ARN
+
+
+Resources:
+  S3Bucket:
+    DeletionPolicy: Retain
+    Type: 'AWS::S3::Bucket'
+    Description: Creating Amazon S3 bucket from CloudFormation
+    Properties:
+      BucketName: repo-storage-bucket
+
+
+  InvokeLambda:
+    DependsOn: S3Bucket
+    Type: AWS::CloudFormation::CustomResource
+    Properties:
+      ServiceToken: !Ref LambdaArn
+
+
+Outputs:
+  S3Bucket:
+    Description: Bucket created successfully.
+    Value: !Ref S3Bucket
+
+
+
+
